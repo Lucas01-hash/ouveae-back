@@ -10,6 +10,13 @@ class Interaction(TimeStampedModel):
     entry = models.ForeignKey('Entry', verbose_name=_('entry'), on_delete=models.CASCADE)
     author = models.ForeignKey(
         User, null=True, blank=True, verbose_name=_("author"), on_delete=models.CASCADE)
+    action = models.CharField(
+        _("action"),
+        max_length=255,
+        null=True,
+        blank=True,
+        default=None,
+    )
     attachment = models.FileField(
         _('attachment'), upload_to='ombudsman/interaction/', blank=True)
     internal_memo = models.TextField(_('internal memo'))
@@ -21,7 +28,7 @@ class Interaction(TimeStampedModel):
         ordering = ['-created']
 
     def __str__(self):
-        return "{0}".format(self.name)
+        return "{0}".format(self.action)
 
 class EntryStatus(TimeStampedModel):
     name = models.CharField(_('name'), max_length=255)
@@ -124,7 +131,7 @@ class Entry(TimeStampedModel):
         ordering = ['-modified']
 
     def __str__(self):
-        return "{0}".format(self.name)
+        return "{0}".format(self.name or self.protocol)
 
     def last_author(self):
         last = Interaction.objects.filter(entry=self).last()
@@ -156,3 +163,17 @@ class Attachment(TimeStampedModel):
 
     def __str__(self):
         return "{0}".format(self.archive.url)
+
+def _generate_random_string():
+    import random
+    import string
+    return ''.join(random.choice(
+        string.ascii_uppercase + string.digits) for _ in range(5))
+
+def create_protocol(sender, instance, **kwargs):
+    if instance.id is None:
+        instance.protocol = _generate_random_string()
+
+models.signals.pre_save.connect(
+    create_protocol, sender=Entry, dispatch_uid="ombudsman.Entry"
+)
