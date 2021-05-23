@@ -39,6 +39,11 @@ ALLOWED_HOSTS = ['v1.ouveai.com','api.ouveai.com','localhost']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = (
+    "https://app.ouveai.com",
+    "http://localhost:3000",
+)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -146,6 +151,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = ('./locale', )
 
 # PHONENUMBER
 # ------------------------
