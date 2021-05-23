@@ -12,7 +12,7 @@ EXPOSE 8000
 # sets the environment variable
 ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
-    DJANGO_SETTINGS_MODULE=rifa.settings \
+    DJANGO_SETTINGS_MODULE=ouveai.settings \
     PORT=8000 \
     WEB_CONCURRENCY=3
 
@@ -26,7 +26,6 @@ RUN pip install -r requirements.txt
 # Install assets
 RUN mkdir -p /app/staticfiles
 RUN mkdir -p /app/static
-RUN python manage.py collectstatic --noinput --clear
 
 # Run application
 CMD gunicorn ouveai.wsgi:application
