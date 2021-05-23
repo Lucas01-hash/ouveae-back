@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['api.ouveai.com','localhost']
+ALLOWED_HOSTS = ['v1.ouveai.com','api.ouveai.com','localhost']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
