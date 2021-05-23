@@ -2,6 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
+from phonenumber_field.modelfields import PhoneNumberField
+from cpf_field.models import CPFField
 from model_utils.models import TimeStampedModel
 
 class Interaction(TimeStampedModel):
@@ -69,7 +71,8 @@ class Entry(TimeStampedModel):
         ('public', _('I want indentify myself'))
     )
 
-    GENDER_CHOICES = (
+    GENDER_CHOICES = (        
+        ('not-answer', _('Not answer')),
         ('female', _('Female')),
         ('male', _('Male'))
     )
@@ -92,7 +95,8 @@ class Entry(TimeStampedModel):
     visibility = models.CharField(
         _('visibility'), default='public', choices=VISIBILITY_CHOICES, max_length=255)
     name = models.CharField(_('name'), blank=True, max_length=255)
-    phone = models.CharField(_('phone'), blank=True, max_length=255)
+    cpf = CPFField(null=True,default=None)
+    phone = PhoneNumberField(_('phone'), null=True, default=None)
     district = models.CharField(_('district'), blank=True, max_length=255)
     gender = models.CharField(
         _('gender'), choices=GENDER_CHOICES, max_length=255, default='', blank=True)
