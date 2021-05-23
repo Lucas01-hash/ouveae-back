@@ -9,7 +9,7 @@ O Projeto constitui em uma aplicativo onde o cidadão poderá criar demandas par
 
 <h1>Ouve Aí landing page</h1>
 <a href="https://ouveai.com/">Clique que será encaminhado para a landing page</a></br></br>
-<a href="https://ouveai.com/">Clique que será encaminhado para o codigo da landing page</a>
+<a href="https://github.com/Lucas01-hash/ouveai-landingpage">Clique que será encaminhado para o codigo da landing page</a>
 
 
 <h1>Ouve Aí Front-end</h1>
