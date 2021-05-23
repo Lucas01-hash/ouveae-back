@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-23 06:13-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ombudsman/models.py:10 ombudsman/models.py:130
+msgid "entry"
+msgstr "Registro"
+
+#: ombudsman/models.py:12
+msgid "author"
+msgstr "autor"
+
+#: ombudsman/models.py:14
+msgid "attachment"
+msgstr "anexo"
+
+#: ombudsman/models.py:15
+msgid "internal memo"
+msgstr "mensagem interna"
+
+#: ombudsman/models.py:16
+msgid "public memo"
+msgstr "mensagem pública"
+
+#: ombudsman/models.py:19
+msgid "Interaction"
+msgstr "Interação"
+
+#: ombudsman/models.py:20
+msgid "Interactions"
+msgstr "Interação"
+
+#: ombudsman/models.py:27 ombudsman/models.py:37 ombudsman/models.py:49
+#: ombudsman/models.py:59 ombudsman/models.py:97
+msgid "name"
+msgstr "nome"
+
+#: ombudsman/models.py:30
+msgid "Entry Status"
+msgstr "Status"
+
+#: ombudsman/models.py:31
+msgid "Entrys Status"
+msgstr "Status"
+
+#: ombudsman/models.py:38
+msgid "color"
+msgstr "cor"
+
+#: ombudsman/models.py:39
+msgid "icon"
+msgstr "ícone"
+
+#: ombudsman/models.py:42
+msgid "Entry Type"
+msgstr "Tipo de registro"
+
+#: ombudsman/models.py:43
+msgid "Entrys Type"
+msgstr "Tipos de registro"
+
+#: ombudsman/models.py:52
+msgid "Entry Source"
+msgstr "Fonte"
+
+#: ombudsman/models.py:53
+msgid "Entrys Source"
+msgstr "Fontes"
+
+#: ombudsman/models.py:62
+msgid "Entry Topic"
+msgstr "Tema"
+
+#: ombudsman/models.py:63
+msgid "Entrys Topic"
+msgstr "Temas"
+
+#: ombudsman/models.py:70
+msgid "I don't want identify myself"
+msgstr "Não quero me identificar"
+
+#: ombudsman/models.py:71
+msgid "I want indentify myself"
+msgstr "Quero me identificar"
+
+#: ombudsman/models.py:75
+msgid "Not answer"
+msgstr "Prefiro não responder"
+
+#: ombudsman/models.py:76
+msgid "Female"
+msgstr "Feminino"
+
+#: ombudsman/models.py:77
+msgid "Male"
+msgstr "Masculino"
+
+#: ombudsman/models.py:91
+msgid "received"
+msgstr "recebido"
+
+#: ombudsman/models.py:93
+msgid "Source"
+msgstr "Fonte"
+
+#: ombudsman/models.py:94
+msgid "Type"
+msgstr "Tipo"
+
+#: ombudsman/models.py:96
+msgid "visibility"
+msgstr "visibilidade"
+
+#: ombudsman/models.py:99
+msgid "phone"
+msgstr "telefone"
+
+#: ombudsman/models.py:100
+msgid "district"
+msgstr "bairro"
+
+#: ombudsman/models.py:102
+msgid "gender"
+msgstr "gênero"
+
+#: ombudsman/models.py:104
+msgid "age group"
+msgstr "grupo de idade"
+
+#: ombudsman/models.py:105
+msgid "subject"
+msgstr "assunto"
+
+#: ombudsman/models.py:106
+msgid "protocol"
+msgstr "protocolo"
+
+#: ombudsman/models.py:107
+msgid "message"
+msgstr "mensagem"
+
+#: ombudsman/models.py:108
+msgid "email"
+msgstr "email"
+
+#: ombudsman/models.py:110
+msgid "topic"
+msgstr "Tema"
+
+#: ombudsman/models.py:112
+msgid "assigned"
+msgstr "atribuído"
+
+#: ombudsman/models.py:114
+msgid "status"
+msgstr "status"
+
+#: ombudsman/models.py:115
+msgid "answer"
+msgstr "resposta"
+
+#: ombudsman/models.py:117
+msgid "answer file"
+msgstr "arquivo de resposta"
+
+#: ombudsman/models.py:119
+msgid "answer file label"
+msgstr "arquivo de resposta"
+
+#: ombudsman/models.py:122
+msgid "Entry"
+msgstr "Registro"
+
+#: ombudsman/models.py:123
+msgid "Entrys"
+msgstr "Registros"
+
+#: ombudsman/models.py:131
+msgid "archive"
+msgstr "anexo"
+
+#: ombudsman/models.py:134
+msgid "Attachment"
+msgstr "anexo"
+
+#: ombudsman/models.py:135
+msgid "Attachments"
+msgstr "Anexos"
