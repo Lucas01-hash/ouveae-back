@@ -15,7 +15,8 @@ import environ
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False)
+    DEBUG=(bool, False),
+    SECRET_KEY=(str, 'django-insecure-5*v1mpa-bb%lfjhtzy%6^pwj*j$2*vgft)3_7=eq!^q@4xpp%b')
 )
 
 # reading .env file
@@ -34,7 +35,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['api.ouveai.com.br','localhost']
+ALLOWED_HOSTS = ['api.ouveai.com','localhost']
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
