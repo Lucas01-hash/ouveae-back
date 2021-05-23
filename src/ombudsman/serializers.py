@@ -13,6 +13,7 @@ class EntrySerializer(serializers.ModelSerializer):
 class EntryViewSet(viewsets.ModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
+    filterset_fields = ('protocol',)
 
 # EntryType - Serializers define the API representation.
 class EntryTypeSerializer(serializers.ModelSerializer):
