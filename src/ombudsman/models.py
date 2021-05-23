@@ -94,18 +94,18 @@ class Entry(TimeStampedModel):
     entry_type = models.ForeignKey('EntryType', verbose_name=_('Type'), on_delete=models.CASCADE)
     visibility = models.CharField(
         _('visibility'), default='public', choices=VISIBILITY_CHOICES, max_length=255)
-    name = models.CharField(_('name'), blank=True, max_length=255)
+    name = models.CharField(_('name'), blank=True, max_length=255, null=True)
     cpf = CPFField(null=True,default=None)
     phone = PhoneNumberField(_('phone'), null=True, default=None)
-    district = models.CharField(_('district'), blank=True, max_length=255)
+    district = models.CharField(_('district'), blank=True, max_length=255, null=True)
     gender = models.CharField(
-        _('gender'), choices=GENDER_CHOICES, max_length=255, default='', blank=True)
+        _('gender'), choices=GENDER_CHOICES, max_length=255, default='', blank=True, null=True)
     age_group = models.CharField(
-        _('age group'), choices=AGE_GROUP_CHOICES, blank=True, max_length=255)
+        _('age group'), choices=AGE_GROUP_CHOICES, blank=True, max_length=255, null=True)
     subject = models.CharField(_('subject'), max_length=255)
     protocol = models.CharField(_('protocol'), blank=True, max_length=255)
     message = models.TextField(_('message'))
-    email = models.EmailField(_('email'), blank=True, max_length=255)
+    email = models.EmailField(_('email'), blank=True, max_length=255, null=True)
     topic = models.ForeignKey(
         'EntryTopic', default=None, null=True, verbose_name=_('topic'), on_delete=models.CASCADE)
     assigned = models.PositiveIntegerField(
@@ -125,6 +125,26 @@ class Entry(TimeStampedModel):
 
     def __str__(self):
         return "{0}".format(self.name)
+
+    def last_author(self):
+        last = Interaction.objects.filter(entry=self).last()
+        author = last.author if last else ""
+        return author
+
+    last_author.short_description = _("last author")
+
+    def is_answered(self):
+        return (
+            self.interaction_set.all().values_list("author_id").distinct().count() > 1
+        )
+
+    is_answered.short_description = _("Answered")
+    is_answered.boolean = True
+
+    def get_interaction_count(self):
+        return self.interaction_set.count()
+
+    get_interaction_count.short_description = _("Interaction")
 
 class Attachment(TimeStampedModel):
     entry = models.ForeignKey('Entry', verbose_name=_('entry'), on_delete=models.CASCADE)
