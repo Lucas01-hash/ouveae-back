@@ -14,3 +14,10 @@ O Projeto constitui em uma aplicativo onde o cidadão poderá criar demandas par
 
 <h1>Ouve Aí Front-end</h1>
 <a href="https://github.com/Lucas01-hash/ouveai-front">Clique que será encaminhado para o codigo de front end</a>
+
+Participantes do projeto:
+1 - Lucas carvalho
+2 - Bruno Gomes
+3 - Maatheus Souza Santos
+4 - Francinery Esperança
+5 - Vicente Garros
