@@ -103,7 +103,7 @@ class Entry(TimeStampedModel):
         _('visibility'), default='public', choices=VISIBILITY_CHOICES, max_length=255)
     name = models.CharField(_('name'), blank=True, max_length=255, null=True)
     cpf = CPFField(null=True,default=None)
-    phone = PhoneNumberField(_('phone'), null=True, default=None)
+    phone = PhoneNumberField(_('phone'), null=True, default=None, blank=True)
     district = models.CharField(_('district'), blank=True, max_length=255, null=True)
     gender = models.CharField(
         _('gender'), choices=GENDER_CHOICES, max_length=255, default='', blank=True, null=True)
