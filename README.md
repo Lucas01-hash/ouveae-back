@@ -20,7 +20,7 @@ O Projeto constitui em uma aplicativo onde o cidadão poderá criar demandas par
 </br>
 </br>
 
-Participantes do projeto:
+Participantes do projeto:</br>
 1 - Lucas carvalho</br>
 2 - Bruno Gomes</br>
 3 - Maatheus Souza Santos</br>
