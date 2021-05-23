@@ -134,7 +134,7 @@ class Entry(TimeStampedModel):
         return "{0}".format(self.name or self.protocol)
 
     def last_author(self):
-        last = Interaction.objects.filter(entry=self).last()
+        last = Interaction.objects.filter(entry=self).order_by('created').last()
         author = last.author if last else ""
         return author
 

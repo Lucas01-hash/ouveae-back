@@ -88,6 +88,17 @@ class EntryAdmin(admin.ModelAdmin):
     inlines = (AttachmentTabularInline, InteractionStackedInline)
     date_hierarchy = "created"
 
+    def save_formset(self, request, form, formset, change):
+        print (request.user)
+        instances = formset.save(commit=False)
+        for obj in instances:
+            if getattr(obj, "author", None) is None:
+                obj.author = request.user
+                obj.save()
+
+        formset.save_m2m()
+    
+
 admin.site.register(Attachment)
 admin.site.register(EntryTopic)
 admin.site.register(EntryStatus)
